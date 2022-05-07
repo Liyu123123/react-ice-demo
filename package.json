@@ -4,6 +4,7 @@
   "homepage": "./",
   "description": "Ant Design and icejs scaffold, use TypeScript.",
   "dependencies": {
+    "@alifd/next": "^1.25.34",
     "@ant-design/icons": "^4.0.2",
     "@ant-design/pro-layout": "^6.5.1",
     "ahooks": "^3.3.10",

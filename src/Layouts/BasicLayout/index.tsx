@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { createElement, useState } from 'react';
 import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
 import { Link } from 'ice';
 import { asideMenuConfig } from './menuConfig';
@@ -20,6 +20,8 @@ export default function BasicLayout({ children, location }) {
       location={{
         pathname: location.pathname,
       }}
+      fixSiderbar
+      fixedHeader
       menuDataRender={() => loopMenuItem(asideMenuConfig)}
       menuItemRender={(item, defaultDom) => {
         if (!item.path) {
@@ -27,23 +29,7 @@ export default function BasicLayout({ children, location }) {
         }
         return <Link to={item.path}>{defaultDom}</Link>;
       }}
-      footerRender={() => (
-        <DefaultFooter
-          links={[
-            {
-              key: 'icejs',
-              title: 'icejs',
-              href: 'https://github.com/ice-lab/icejs',
-            },
-            {
-              key: 'antd',
-              title: 'antd',
-              href: 'https://github.com/ant-design/ant-design',
-            },
-          ]}
-          copyright="by icejs & antd"
-        />
-      )}
+
     >
       <div style={{ minHeight: '60vh' }}>{children}</div>
     </ProLayout>
